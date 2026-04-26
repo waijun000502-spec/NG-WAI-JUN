@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "Enquiry": {
+      "title": "Enquiry",
+      "description": "Customer enquiries for insurance",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Customer name" },
+        "age": { "type": "string", "description": "Customer age" },
+        "occupation": { "type": "string", "description": "Customer occupation" },
+        "whatsapp": { "type": "string", "description": "Customer whatsapp number" },
+        "createdAt": { "type": "number", "description": "Timestamp" }
+      },
+      "required": ["name", "age", "occupation", "whatsapp", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/enquiries/{enquiryId}": {
+      "schema": { "$ref": "#/entities/Enquiry" },
+      "description": "Enquiries from customers"
+    }
+  }
+}
